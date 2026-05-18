@@ -1,0 +1,57 @@
+.nav-item {
+    height: 32px;
+    padding: 10px 14px;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text);
+    white-space: nowrap;
+    text-decoration: none;
+
+    display: flex;
+    align-items: center;
+
+    position: relative;
+
+    /* Transitions for bg + text color on state changes */
+    transition: color 0.15s ease, background-color 0.15s ease;
+
+    cursor: pointer;
+    border: none;
+    background: none;
+    outline: none;
+}
+
+.nav-item__icon {
+    padding-right: 15px;
+}
+
+
+
+
+/* ── Hover ──────────────────────────────────────── */
+.nav-item:hover {
+    color: var(--text-h);
+    background-color: var(--hover-bg);
+}
+
+/* ── Focus (keyboard navigation) ───────────────── */
+.nav-item:focus-visible {
+    color: var(--accent);
+    background-color: var(--accent-bg);
+    /* Use outline offset so it clears the border-radius */
+    outline: 2px solid  var(--accent-border);
+    outline-offset: 2px;
+}
+
+/* Active right-border accent */
+.nav-item--active:before {
+    content: '';
+    position: absolute;
+    right: 0; top: 0; bottom: 0;
+    width: 3px;
+    background: var(--primary-2);
+}
+
+.nav-item--active {
+    background-color: rgba( from var(--primary-1) r g b / 0.15);
+}

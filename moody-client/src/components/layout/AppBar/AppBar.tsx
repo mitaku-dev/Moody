@@ -1,9 +1,7 @@
-import {Nav} from "@/components/layout/AppBar/Nav";
 import LiveBadge from "@/components/layout/AppBar/LiveBadge";
 import {SearchBar} from "@/components/layout/AppBar/SearchBar";
 import {Avatar} from "@/components/layout/AppBar/Avatar";
 import './AppBar.css';
-import {useActiveTab} from "@/hooks/useActiveTab";
 
 
 const NAV_LINKS = [
@@ -13,7 +11,6 @@ const NAV_LINKS = [
 ];
 
 export default function AppBar() {
-    const { activeTab, setActiveTab } = useActiveTab('Moodboards');
 
 
     return(

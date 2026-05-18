@@ -1,17 +1,23 @@
-export function NavItem({ icon, label, active, collapsed, onClick }) {
+import { NavLink } from 'react-router-dom'
+import "./NavItem.css";
+
+export function NavItem({ icon, label, href, collapsed }) {
     return (
-<a
-        className={`nav-item ${active ? 'nav-item--active' : ''}`}
-    aria-current={active ? 'page' : undefined}
-    onClick={e => { e.preventDefault(); onClick() }}
-    href="#"
+        <NavLink
+            className={({ isActive }) =>
+                `nav-item ${isActive ? 'nav-item--active' : ''}`
+            }
+            aria-current={({ isActive }) => isActive ? 'page' : undefined}
+            to={href}
         >
         <span className="nav-item__icon" aria-hidden>{icon}</span>
-<span className="nav-item__label">{label}</span>
-{/* Tooltip only visible when sidebar is collapsed */}
-{collapsed && (
-<span className="nav-item__tooltip" role="tooltip">{label}</span>
-)}
-</a>
-)
+            {!collapsed && (
+                <span className="nav-item__label">{label}</span>
+            )}
+        {/* Tooltip only visible when sidebar is collapsed */}
+        {collapsed && (
+            <span className="nav-item__tooltip" role="tooltip">{label}</span>
+        )}
+        </NavLink>
+    )
 }
