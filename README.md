@@ -10,7 +10,7 @@
 
 <br>
 
-[Features](#-features) · [Architecture](#-architecture) · [Getting Started](#-getting-started) · [Roadmap](#-roadmap) · [Project Status](#-project-status)
+[Features](#-features) · [Architecture](#-architecture) · [Getting Started](#-getting-started) · [Mockups](#-mockups) · [Roadmap](#-roadmap) · [Project Status](#-project-status)
 
 <br><br>
 </div>
@@ -63,6 +63,25 @@ npm install
 # Start the development server
 npm run dev
 ```
+---
+
+## 🖼️ Mockups
+ 
+### Dashboard
+![Dashboard](https://raw.githubusercontent.com/mitaku-dev/Moody/master/mockup/dashboard.png)
+
+The Dashboard is your central hub: get a quick overview of all open and closed projects including time and budget tracking at a glance.
+ 
+### Moodboard Canvas
+![Moodboard](https://raw.githubusercontent.com/mitaku-dev/Moody/master/mockup/moodboard.png)
+
+The core of Moody. Build moodboards with annotations and labels, collaborate in real time with your team, and let Moody automatically generate a packlist and shopping list from your board. Save reusable Moods to speed up future shoots: For example, an Outdoor Shoot mood could bundle a camera, reflector, and other essentials, ready to drop into any project.
+ 
+### Planner
+![Planner](https://raw.githubusercontent.com/mitaku-dev/Moody/master/mockup/planner.png)
+ 
+The Planner brings everything together in one focused view: where the shoot happens, what's planned, and what's needed. All without having to dig back into the moodboard.
+
 
 ---
 
