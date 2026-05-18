@@ -1,0 +1,137 @@
+/* ── Base ── */
+.mood-card {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    background: rgba(255, 255, 255, 0.03);
+    cursor: pointer;
+    position: relative;
+    transition: background 0.15s, border-color 0.15s;
+}
+
+.mood-card:hover {
+    background: rgba(255, 255, 255, 0.07);
+    border-color: rgba(255, 255, 255, 0.08);
+}
+
+/* ── Selected ── */
+.mood-card--selected {
+    background: rgba(200, 80, 255, 0.08);
+    border-color: rgba(200, 80, 255, 0.25);
+}
+.mood-card--selected:hover {
+    background: rgba(200, 80, 255, 0.12);
+}
+
+/* ── Icon ── */
+.mood-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 16px;
+}
+.mood-icon--teal   { background: rgba(29, 158, 117, 0.15); color: #1d9e75; }
+.mood-icon--amber  { background: rgba(186, 117, 23, 0.15); color: #fbbf24; }
+.mood-icon--blue   { background: rgba(55, 138, 221, 0.15); color: #378add; }
+.mood-icon--coral  { background: rgba(216, 90, 48, 0.15);  color: #d85a30; }
+.mood-icon--purple { background: rgba(200, 80, 255, 0.15); color: #c850ff; }
+
+/* ── Text ── */
+.mood-text { flex: 1; min-width: 0; }
+.mood-title {
+    font-size: 13px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.8);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.mood-sub {
+    font-size: 11.5px;
+    color: rgba(255, 255, 255, 0.3);
+    margin-top: 1px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* ── Hover actions ── */
+.mood-actions {
+    display: flex;
+    gap: 4px;
+    opacity: 0;
+    flex-shrink: 0;
+    transition: opacity 0.12s;
+}
+.mood-card:hover .mood-actions,
+.mood-card--selected .mood-actions { opacity: 1; }
+
+.mood-action {
+    width: 22px;
+    height: 22px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    font-size: 13px;
+    transition: background 0.12s, color 0.12s;
+}
+.mood-action:hover { background: rgba(255,255,255,0.12); color: #fff; }
+.mood-action--danger:hover {
+    background: rgba(255, 80, 80, 0.15);
+    color: #ff5050;
+    border-color: rgba(255, 80, 80, 0.2);
+}
+
+/* ── Selection check ── */
+.mood-check {
+    position: absolute;
+    top: 6px; right: 6px;
+    width: 14px; height: 14px;
+    border-radius: 50%;
+    background: #c850ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 9px;
+    color: #fff;
+    opacity: 0;
+    transition: opacity 0.15s;
+    pointer-events: none;
+}
+.mood-card--selected .mood-check { opacity: 1; }
+
+/* ── Collapsed (icon-rail mode) ── */
+.mood-card--collapsed {
+    width: 44px;
+    padding: 6px;
+    justify-content: center;
+}
+.mood-card--collapsed .mood-text,
+.mood-card--collapsed .mood-actions { display: none; }
+
+/* ── Add-new ghost card ── */
+.mood-card--add {
+    border: 1px dashed rgba(255, 255, 255, 0.12);
+    background: transparent;
+    color: rgba(255, 255, 255, 0.25);
+    font-size: 12.5px;
+    justify-content: center;
+    gap: 8px;
+}
+.mood-card--add:hover {
+    border-color: rgba(200, 80, 255, 0.3);
+    color: rgba(200, 80, 255, 0.6);
+    background: rgba(200, 80, 255, 0.05);
+}

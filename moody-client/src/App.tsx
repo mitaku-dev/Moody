@@ -1,20 +1,23 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
 import './App.css'
-import AppToolbar from "@/components/app-toolbar";
 import MoodCanvas from "@/components/MoodCanvas";
 import {Theme} from "@radix-ui/themes";
+import * as React from "react";
+import AppBar from "@/components/layout/AppBar/AppBar";
+import {Sidebar} from "@/components/layout/SideBar";
 
 function App() {
-  const [count, setCount] = useState(0)
+    const [collapsed, setCollapsed] = useState(false);
 
   return (
     <>
-        <Theme>
-            <MoodCanvas/>
-        </Theme>
+            <div className={`app-shell ${collapsed ? 'app-shell--collapsed' : ''}`}>
+                <AppBar/>
+                <Sidebar
+                onToggle={() => setCollapsed(c => !c)}
+                collapsed={collapsed}/>
+                <MoodCanvas/>
+            </div>
 
     </>
   )

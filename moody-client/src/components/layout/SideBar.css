@@ -1,0 +1,63 @@
+.sidebar {
+    width: 100%;
+    transition: width 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;         /* hides labels as width shrinks */
+
+    border-right: 1px solid var(--neutral-2);
+    -webkit-box-shadow: 8px 0px 15px 5px #000000;
+    box-shadow: 8px 0px 15px 5px #000000;
+
+}
+
+
+.sidebar--collapsed { width: 56px; }
+
+/* Labels fade out slightly ahead of the width collapsing */
+.sidebar--collapsed .nav-item__label,
+.sidebar--collapsed .button-label,
+.sidebar--collapsed .sidebar__workspace-label,
+.sidebar--collapsed .sidebar__section-header {
+    opacity: 0;
+    transition: opacity 0.1s ease;
+    pointer-events: none;
+}
+
+/* Active left-border accent */
+.nav-item--active::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 6px; bottom: 6px;
+    width: 2.5px;
+    border-radius: 0 2px 2px 0;
+    background: #c850ff;
+}
+
+/* Chevron flips when collapsed */
+.sidebar__toggle i {
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.sidebar--collapsed .sidebar__toggle i {
+    transform: rotate(180deg);
+}
+
+/* Tooltip — only shows in collapsed mode */
+.nav-item__tooltip {
+    position: absolute;
+    left: calc(100% + 10px);
+    background: #2a2a3a;
+    border: 1px solid rgba(255,255,255,0.1);
+    color: #fff;
+    font-size: 12px;
+    padding: 5px 10px;
+    border-radius: 6px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.1s ease;
+}
+.sidebar--collapsed .nav-item:hover .nav-item__tooltip { opacity: 1; }
+
+
+.sidebar--collapsed .button-label {
+
+}

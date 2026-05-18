@@ -13,6 +13,7 @@ import {ImageNode} from "./nodes/ImageNode"
 import '@xyflow/react/dist/style.css';
 import AppToolbar from "@/components/app-toolbar";
 import Dropzone, {useDropzone} from "react-dropzone";
+import "./MoodCanvas.css";
 
 const nodeTypes = {
     image: ImageNode,
@@ -74,7 +75,7 @@ export default function MoodCanvas() {
     const selectedType = "image";
 
     return (
-        <div  {...getRootProps()}  style={{width: "100%", height: "90vh"}}>
+        <div  className="canvas" {...getRootProps()}  style={{width: "100%", height: "90vh"}}>
             <AppToolbar/>
                 <ReactFlow
                     nodes={nodes}
