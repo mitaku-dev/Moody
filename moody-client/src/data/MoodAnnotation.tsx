@@ -1,6 +1,6 @@
-import MoodItem from "@/data/MoodItem";
+import type {MoodItem} from "@/data/MoodItem";
 
-export default interface MoodAnnotation {
+export interface MoodAnnotation {
     id: string;
     moodId: string;
 

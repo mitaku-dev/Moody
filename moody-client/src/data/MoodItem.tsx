@@ -1,7 +1,7 @@
 type MoodItemCategory = 'clothing' | 'prop' | 'equipment' | 'makeup' | 'other';
 type MoodItemAction   = 'buy' | 'bring';
 
-export default interface MoodItem {
+export interface MoodItem {
     id: string;
 
     label: string;
@@ -14,3 +14,4 @@ export default interface MoodItem {
     assignedTo?: string;
     done: boolean;
 }
+

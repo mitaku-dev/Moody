@@ -10,7 +10,7 @@ import {
     FontItalicIcon,
 } from "@radix-ui/react-icons";
 
-function AppToolbar() {
+function AppToolbar({selectedMood, setSelectedMood}) {
     return(
         <>
             <Toolbar.Root className="ToolbarRoot  flex-col items-start" aria-label="Formatting options" orientation="vertical">
@@ -41,6 +41,9 @@ function AppToolbar() {
                     type="single"
                     defaultValue="image"
                     aria-label="Elements"
+                    onValueChange={(value) => {
+                        setSelectedMood(value);
+                    }}
                 >
                     <Toolbar.ToggleItem
                         className="ToolbarToggleItem"
@@ -58,8 +61,8 @@ function AppToolbar() {
                     </Toolbar.ToggleItem>
                     <Toolbar.ToggleItem
                         className="ToolbarToggleItem"
-                        value="paint"
-                        aria-label="paint"
+                        value="color"
+                        aria-label="color"
                     >
                         <Paintbrush size={24}/>
                     </Toolbar.ToggleItem>

@@ -1,7 +1,7 @@
-import MoodItem from "@/data/MoodItem";
-import MoodAnnotation from "@/data/MoodAnnotation";
+import type {MoodItem} from "@/data/MoodItem";
+import type {MoodAnnotation} from "@/data/MoodAnnotation";
 
-type MoodContentType = 'image' | 'text' | 'color' | 'note' | 'link';
+export type MoodContentType = 'image' | 'text' | 'color' | 'note' | 'link';
 
 type MoodContent =
     | ImageContent
@@ -11,14 +11,14 @@ type MoodContent =
     | LinkContent;
 
 // Per-type content payloads
-interface ImageContent {
+export interface ImageContent {
     type: 'image';
     src: string;
     alt?: string;
     fit: 'cover' | 'contain' | 'fill';
 }
 
-interface TextContent {
+export interface TextContent {
     type: 'text';
     body: string;
     fontSize: number;
@@ -28,19 +28,19 @@ interface TextContent {
     align: 'left' | 'center' | 'right';
 }
 
-interface ColorContent {
+export interface ColorContent {
     type: 'color';
     hex: string;
     label?: string;
 }
 
-interface NoteContent {
+export interface NoteContent {
     type: 'note';
     body: string;
     backgroundColor: string;
 }
 
-interface LinkContent {
+export interface LinkContent {
     type: 'link';
     url: string;
     previewTitle?: string;
@@ -67,7 +67,7 @@ interface MoodStyle {
     shadow?: boolean;
 }
 
-interface Mood {
+export interface Mood {
     id: string;                   // UUID
     createdAt: string;
     updatedAt: string;

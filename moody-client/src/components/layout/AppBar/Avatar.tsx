@@ -1,9 +1,9 @@
 import "./Avatar.css";
 
-export function Avatar({ initials, color = 'purple', onClick }) {
+export function Avatar({ initials, color = 'purple', onClick , size}) {
     return (
         <button
-            className="avatar"
+            className={`avatar ${size ? "avatar--" + size : ""}`}
             onClick={onClick}
             aria-label="User menu"
             aria-haspopup="menu"
